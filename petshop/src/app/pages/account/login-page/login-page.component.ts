@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { DataService } from 'src/app/services/data.service';
 import { Security } from 'src/app/utils/security.util';
@@ -13,11 +14,11 @@ import { CustomValidator } from 'src/app/validators/custom.validator';
 export class LoginPageComponent implements OnInit {
   public form: FormGroup;
   public busy = false;
-  public router: any;
 
   constructor(
     private service: DataService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.form = this.fb.group({
       username: ['', Validators.compose([

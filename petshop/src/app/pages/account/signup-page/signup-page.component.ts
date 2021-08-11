@@ -45,7 +45,10 @@ export class SignupPageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  submit() {
     this.busy = true;
     this
       .service
